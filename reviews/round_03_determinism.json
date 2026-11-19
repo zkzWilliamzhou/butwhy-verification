@@ -1,0 +1,37 @@
+{
+  "checks": [
+    {
+      "evidence": "golden_ids=['436ce7e2aeef911e1980', '436ce7e2aeef911e1980', '436ce7e2aeef911e1980']",
+      "name": "three independent demo runs produce identical golden IDs",
+      "passed": true
+    },
+    {
+      "evidence": "sorted keys, raw UTF-8, stable IDs",
+      "name": "canonical JSON is compact, sorted, UTF-8 and stable",
+      "passed": true
+    },
+    {
+      "evidence": "rejected 4/4 unsafe inputs",
+      "name": "duplicate keys, NaN, BOM and non-canonical text rejected",
+      "passed": true
+    },
+    {
+      "evidence": "captured_at is presentation-only, excluded from identity",
+      "name": "wall-clock field is excluded from hashed identity",
+      "passed": true
+    },
+    {
+      "evidence": "decide() is pure",
+      "name": "causal truth table is pure and reproducible",
+      "passed": true
+    }
+  ],
+  "checks_passed": 5,
+  "checks_total": 5,
+  "description": "Byte-stable artifacts, canonical JSON, no wall clock inside hashed payloads.",
+  "findings": [],
+  "gate": "PASS",
+  "lens": "determinism and canonical encoding",
+  "round": 3,
+  "slug": "determinism"
+}

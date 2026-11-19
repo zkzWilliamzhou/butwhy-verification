@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "criteria": [
+    {
+      "name": "novelty",
+      "description": "Size of the residual gap after adversarial prior-art search; 1 = core claim already shipped, 5 = no direct equivalent located",
+      "weight": 3,
+      "direction": "higher",
+      "minimum": 1,
+      "maximum": 5
+    },
+    {
+      "name": "adoption",
+      "description": "Breadth of the addressable workflow, one-command install, legible output, CI fit; 1 = niche, 5 = universal daily pain",
+      "weight": 2,
+      "direction": "higher",
+      "minimum": 1,
+      "maximum": 5
+    },
+    {
+      "name": "implementability",
+      "description": "Achievable honestly with Python 3.10 stdlib only in one session; 1 = research project, 5 = small CLI",
+      "weight": 2,
+      "direction": "higher",
+      "minimum": 1,
+      "maximum": 5
+    },
+    {
+      "name": "falsifiability",
+      "description": "Can the core claim be proven wrong by a public fixture corpus and byte-stable artifacts; 1 = unfalsifiable narrative, 5 = machine-checkable evidence",
+      "weight": 2,
+      "direction": "higher",
+      "minimum": 1,
+      "maximum": 5
+    },
+    {
+      "name": "demoability",
+      "description": "Can a stranger see the value in under 30 seconds with no setup; 1 = needs infra, 5 = one command",
+      "weight": 1,
+      "direction": "higher",
+      "minimum": 1,
+      "maximum": 5
+    },
+    {
+      "name": "safety_burden",
+      "description": "Risk of executing arbitrary commands, handling untrusted data, or leaking secrets; 1 = read-only, 5 = broad dangerous execution surface",
+      "weight": 2,
+      "direction": "lower",
+      "minimum": 1,
+      "maximum": 5
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "checks": [
+    {
+      "evidence": "caught 6/6: ['data', 'dupid', 'head', 'reorder', 'seqgap', 'truncate']",
+      "name": "all six chain-forgery variants are detected",
+      "passed": true
+    },
+    {
+      "evidence": "version 0 rejected",
+      "name": "schema downgrade is rejected, never auto-upgraded",
+      "passed": true
+    },
+    {
+      "evidence": "hostile loader vars reaching child=[]",
+      "name": "untrusted capsule loader variables never reach the child",
+      "passed": true
+    },
+    {
+      "evidence": "NFKC confusables denied",
+      "name": "Unicode confusable env names are denied",
+      "passed": true
+    },
+    {
+      "evidence": "17 MiB bomb rejected before materialization",
+      "name": "JSON bomb rejected before unbounded allocation",
+      "passed": true
+    },
+    {
+      "evidence": "traversal denied",
+      "name": "factor path traversal is denied before filesystem access",
+      "passed": true
+    },
+    {
+      "evidence": "offline recomputation matches stored head",
+      "name": "ledger verifies offline with no external trust anchor",
+      "passed": true
+    }
+  ],
+  "checks_passed": 7,
+  "checks_total": 7,
+  "description": "Hash-chain forgery, replay/downgrade, untrusted capsules, confusables and JSON bombs.",
+  "findings": [],
+  "gate": "PASS",
+  "lens": "adversarial red team",
+  "round": 8,
+  "slug": "redteam"
+}

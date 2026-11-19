@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "evidence": "usage: butwhy [-h] [--version] {capture,diff,run,report,verify,demo} ...\n\nCounterfactual one-factor replay for 'works on",
+      "name": "--help lists exactly the six subcommands",
+      "passed": true
+    },
+    {
+      "evidence": "butwhy 0.1.0 (schema 1, stdlib-only, offline)",
+      "name": "--version works without a subcommand",
+      "passed": true
+    },
+    {
+      "evidence": "failed=[]",
+      "name": "all six subcommands expose --help",
+      "passed": true
+    },
+    {
+      "evidence": "rc=0 err=",
+      "name": "demo runs the full pipeline offline",
+      "passed": true
+    },
+    {
+      "evidence": "[]",
+      "name": "all five artifacts exist with correct document types",
+      "passed": true
+    },
+    {
+      "evidence": "report=0 verify=0",
+      "name": "report renders and verify attests the ledger",
+      "passed": true
+    },
+    {
+      "evidence": "surface constants intact",
+      "name": "locked surface constants unchanged",
+      "passed": true
+    },
+    {
+      "evidence": "tamper proof present",
+      "name": "demo demonstrates ledger tamper detection",
+      "passed": true
+    }
+  ],
+  "checks_passed": 8,
+  "checks_total": 8,
+  "description": "Every locked CLI surface, artifact type and verdict is reachable and observable.",
+  "findings": [
+    "No functional gaps found after the fixture TypeError fix."
+  ],
+  "gate": "PASS",
+  "lens": "functional completeness",
+  "round": 1,
+  "slug": "functional"
+}

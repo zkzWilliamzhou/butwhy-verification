@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "evidence": "mismatches=[]",
+      "name": "all nine truth-table rows produce the exact verdict",
+      "passed": true
+    },
+    {
+      "evidence": "one-way overclaims=[]",
+      "name": "one-way evidence never yields necessary_and_sufficient",
+      "passed": true
+    },
+    {
+      "evidence": "multi_factor note present",
+      "name": "multiple decisive factors force abstention",
+      "passed": true
+    },
+    {
+      "evidence": "flake abstains",
+      "name": "mixed repeats force inconclusive with zero confidence",
+      "passed": true
+    },
+    {
+      "evidence": "reachable=['inconclusive', 'necessary', 'necessary_and_sufficient', 'no_effect', 'non_replayable', 'sufficient']",
+      "name": "all six verdict values are reachable and none are invented",
+      "passed": true
+    },
+    {
+      "evidence": "report abstains from cause language",
+      "name": "rendered report contains no causal overclaim",
+      "passed": true
+    }
+  ],
+  "checks_passed": 6,
+  "checks_total": 6,
+  "description": "Exhaustive truth table, abstention rules, multi-factor and flake handling.",
+  "findings": [],
+  "gate": "PASS",
+  "lens": "causal honesty",
+  "round": 9,
+  "slug": "causal"
+}

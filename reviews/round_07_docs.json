@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "evidence": "README/CHANGELOG/LICENSE present",
+      "name": "required project documentation exists",
+      "passed": true
+    },
+    {
+      "evidence": "missing=[]",
+      "name": "README states version, offline/zero-dep rule, CLI, verdicts, exit codes, limits",
+      "passed": true
+    },
+    {
+      "evidence": "all 7 exit codes documented",
+      "name": "README contains the full exit-code table",
+      "passed": true
+    },
+    {
+      "evidence": "untested claims=[]",
+      "name": "key README claims have corresponding automated tests",
+      "passed": true
+    },
+    {
+      "evidence": "forbidden claim phrases in machine output=[]",
+      "name": "machine output contains no root-cause language",
+      "passed": true
+    },
+    {
+      "evidence": "undisclosed risks=[]",
+      "name": "residual risks and the star target are disclosed honestly",
+      "passed": true
+    }
+  ],
+  "checks_passed": 6,
+  "checks_total": 6,
+  "description": "Every documented claim is backed by code/tests; limitations and residual risks disclosed.",
+  "findings": [],
+  "gate": "PASS",
+  "lens": "documentation honesty",
+  "round": 7,
+  "slug": "docs"
+}

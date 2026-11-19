@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "evidence": "capture 0.0020s < 2.0s",
+      "name": "capture completes within the 2s budget",
+      "passed": true
+    },
+    {
+      "evidence": "diff 0.0001s < 1.0s",
+      "name": "diff completes within the 1s budget",
+      "passed": true
+    },
+    {
+      "evidence": "canonical 4000-key doc 0.0085s",
+      "name": "canonical encoding handles a large document within budget",
+      "passed": true
+    },
+    {
+      "evidence": "demo 0.81s < 60s",
+      "name": "full demo completes within the 60s budget",
+      "passed": true
+    },
+    {
+      "evidence": "AST + runtime offline guard passed",
+      "name": "no network imports in production modules",
+      "passed": true
+    },
+    {
+      "evidence": "100 KB output capped to 2 KB in memory",
+      "name": "output memory is bounded by the byte cap",
+      "passed": true
+    }
+  ],
+  "checks_passed": 6,
+  "checks_total": 6,
+  "description": "Measured budgets for capture, diff, replay and the full demo; offline guard.",
+  "findings": [],
+  "gate": "PASS",
+  "lens": "performance and resource governance",
+  "round": 6,
+  "slug": "performance"
+}

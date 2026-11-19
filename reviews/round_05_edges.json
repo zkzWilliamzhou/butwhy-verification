@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "evidence": "empty tree captured",
+      "name": "empty working tree captures successfully",
+      "passed": true
+    },
+    {
+      "evidence": "['.hidden', 'café.txt', '日本語.md', '🚀.bin']",
+      "name": "unicode and dotfile names preserved",
+      "passed": true
+    },
+    {
+      "evidence": "{'bin.dat': 'binary', 'crlf.txt': 'crlf', 'lf.txt': 'lf'}",
+      "name": "LF / CRLF / binary classification is correct",
+      "passed": true
+    },
+    {
+      "evidence": "symlink recorded, hardlink refused",
+      "name": "in-tree symlinks recorded, hardlinks/special files refused",
+      "passed": true
+    },
+    {
+      "evidence": "identical capsules -> empty factor list",
+      "name": "identical capsules produce no factors",
+      "passed": true
+    },
+    {
+      "evidence": "mode + case factors applied in-copy",
+      "name": "file_mode and filename_case factors apply only inside the copy",
+      "passed": true
+    },
+    {
+      "evidence": "link retargeted, target file intact",
+      "name": "symlink retarget edits the link, not its target",
+      "passed": true
+    }
+  ],
+  "checks_passed": 7,
+  "checks_total": 7,
+  "description": "Empty trees, unicode names, line endings, binaries, links, modes and case.",
+  "findings": [
+    "REVISION APPLIED: _safe_join used realpath() on the final component, so retargeting a symlink operated on the symlink's TARGET. Replaced with lexical join + ancestor containment checks; regressed by this check."
+  ],
+  "gate": "PASS",
+  "lens": "edge cases and filesystem semantics",
+  "round": 5,
+  "slug": "edges"
+}

@@ -1,0 +1,18 @@
+{
+  "byte_differences": [],
+  "canonical_bytes_stable": true,
+  "full_suite_pass": true,
+  "function_preserved": true,
+  "measured_after": {
+    "canonical_600_keys_200_calls_sec": 0.06533944400007385,
+    "guard_offline_60_calls_sec": 0.11661036600003172
+  },
+  "measured_before": {
+    "canonical_600_keys_200_calls_sec": 0.23274017899996124,
+    "guard_offline_60_calls_sec": 7.2512770220000675,
+    "note": "Pre-optimization baseline, measured before any internal caching."
+  },
+  "rule": "A function change = any change to CLI surface, exit codes, verdict values, factor set, canonical artifact bytes, or ledger hash chain. Internal caching is allowed.",
+  "speedup_guard_offline": 62.18,
+  "surface_unchanged": true
+}

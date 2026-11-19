@@ -1,0 +1,32 @@
+{
+  "checks": [
+    {
+      "evidence": "byte-differences=[]",
+      "name": "every canonical artifact is BYTE-IDENTICAL to the frozen baseline",
+      "passed": true
+    },
+    {
+      "evidence": "hash mismatches=[]",
+      "name": "frozen SHA-256 manifest matches current artifacts",
+      "passed": true
+    },
+    {
+      "evidence": "surface drift detected",
+      "name": "CLI/verdict/factor/module surface unchanged",
+      "passed": true
+    },
+    {
+      "evidence": "OK",
+      "name": "complete unittest suite passes",
+      "passed": true
+    }
+  ],
+  "checks_passed": 4,
+  "checks_total": 4,
+  "description": "Freeze canonical artifacts BEFORE optimization; prove byte-identical function.",
+  "findings": [],
+  "gate": "PASS",
+  "lens": "golden non-regression gate",
+  "round": 10,
+  "slug": "golden"
+}

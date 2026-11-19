@@ -1,0 +1,76 @@
+{
+  "artifacts": [
+    "capsule.json",
+    "diff.json",
+    "golden.json",
+    "ledger.json",
+    "verdict.json"
+  ],
+  "frozen_at_note": "Pre-optimization baseline. Never overwritten.",
+  "sha256": {
+    "capsule.json": "716a5ebcde9dacbc8d3c34fd8b047e0c7c6b4cabc21f3f376adaf3aacb88a428",
+    "diff.json": "6d93ee0c6aebe727200d0469384678f41ffec22ca5ce17146bdc8ac52b140509",
+    "golden.json": "c38bbd376e8a6af58af8895b9a331f8dd1f3c45c2698a85a27792415a370571a",
+    "ledger.json": "2bf020b46044fd9c3c78924d22fbdf4c70152abab23bb58d41c37fa698b7d0b6",
+    "verdict.json": "a71c0b56a7ef4dec5e0bde0adcc2c60ce70db1ba3da98acfe3f0a0cd849c3b5a"
+  },
+  "surface": {
+    "exit_codes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "modules": [
+      "__init__.py",
+      "__main__.py",
+      "capture.py",
+      "causal.py",
+      "cli.py",
+      "contract.py",
+      "demo.py",
+      "diff.py",
+      "errors.py",
+      "factors.py",
+      "isolation.py",
+      "jsonutil.py",
+      "ledger.py",
+      "report.py",
+      "runtime.py",
+      "secrets.py"
+    ],
+    "non_replayable_families": [
+      "interpreter_version",
+      "platform"
+    ],
+    "replayable_families": [
+      "env_var",
+      "locale",
+      "timezone",
+      "line_endings",
+      "symlink_target",
+      "filename_case",
+      "file_mode",
+      "path_shadow"
+    ],
+    "subcommands": [
+      "capture",
+      "diff",
+      "run",
+      "report",
+      "verify",
+      "demo"
+    ],
+    "verdicts": [
+      "necessary_and_sufficient",
+      "necessary",
+      "sufficient",
+      "no_effect",
+      "non_replayable",
+      "inconclusive"
+    ]
+  }
+}

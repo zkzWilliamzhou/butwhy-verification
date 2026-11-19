@@ -1,0 +1,84 @@
+{
+  "checks": [
+    {
+      "evidence": "rc=3 for 'rm -rf / --no-preserve-root'",
+      "name": "argv policy denies 'rm -rf / --no-preserve-root'",
+      "passed": true
+    },
+    {
+      "evidence": "rc=3 for 'sudo id'",
+      "name": "argv policy denies 'sudo id'",
+      "passed": true
+    },
+    {
+      "evidence": "rc=3 for \"python3 -c 'import os'\"",
+      "name": "argv policy denies \"python3 -c 'import os'\"",
+      "passed": true
+    },
+    {
+      "evidence": "rc=3 for \"sh -c 'touch /tmp/x'\"",
+      "name": "argv policy denies \"sh -c 'touch /tmp/x'\"",
+      "passed": true
+    },
+    {
+      "evidence": "rc=3 for 'python3 /etc/passwd'",
+      "name": "argv policy denies 'python3 /etc/passwd'",
+      "passed": true
+    },
+    {
+      "evidence": "rc=3 for 'python3 ../secret'",
+      "name": "argv policy denies 'python3 ../secret'",
+      "passed": true
+    },
+    {
+      "evidence": "not denied=[]",
+      "name": "never-transplant denylist covers loader/runtime/identity/confusables",
+      "passed": true
+    },
+    {
+      "evidence": "keys=['BUTWHY_SANDBOX', 'FEATURE_FLAG', 'HOME', 'LANG', 'PATH', 'PYTHONDONTWRITEBYTECODE', 'TMPDIR']",
+      "name": "child env is rebuilt and dangerous names stripped",
+      "passed": true
+    },
+    {
+      "evidence": "secret absent from capsule",
+      "name": "secret values never enter a capsule",
+      "passed": true
+    },
+    {
+      "evidence": "opaque host ids are not stored in plaintext",
+      "name": "host credential-ish values are redacted by value class",
+      "passed": true
+    },
+    {
+      "evidence": "source tree unchanged",
+      "name": "experiments never modify the original tree",
+      "passed": true
+    },
+    {
+      "evidence": "leftovers=[]",
+      "name": "disposable copies are always cleaned up",
+      "passed": true
+    },
+    {
+      "evidence": "ledger mode 0o600",
+      "name": "ledger written with private permissions",
+      "passed": true
+    },
+    {
+      "evidence": "dry-run gate enforced",
+      "name": "run without the exact token only prints a dry-run plan",
+      "passed": true
+    }
+  ],
+  "checks_passed": 14,
+  "checks_total": 14,
+  "description": "Execution policy, environment denylist, secret redaction and containment boundaries.",
+  "findings": [
+    "REVISION APPLIED: capsules previously stored innocuously-named host IDs in plaintext. Added value-class token detection in secrets.py; regressed by this check."
+  ],
+  "gate": "PASS",
+  "lens": "safety and isolation",
+  "round": 2,
+  "slug": "safety"
+}

@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "evidence": "unsupported schema -> exit 5",
+      "name": "unsupported schema version exits 5",
+      "passed": true
+    },
+    {
+      "evidence": "malformed JSON -> rc=5",
+      "name": "malformed JSON is rejected without a traceback",
+      "passed": true
+    },
+    {
+      "evidence": "16 MiB and depth-32 bounds enforced",
+      "name": "JSON size and depth bounds enforced before allocation",
+      "passed": true
+    },
+    {
+      "evidence": "tree cap -> exit 4 (err=butwhy: copy exceeds 1 bytes\n)",
+      "name": "exceeding the copy cap exits 4 with no partial artifact",
+      "passed": true
+    },
+    {
+      "evidence": "timeout is an observed outcome, verdict abstains (rc=0)",
+      "name": "command timeout produces inconclusive, never a cause claim",
+      "passed": true
+    },
+    {
+      "evidence": "20 KB output capped at 1 KB, truncated=True",
+      "name": "stdout byte cap enforced without unbounded memory",
+      "passed": true
+    }
+  ],
+  "checks_passed": 6,
+  "checks_total": 6,
+  "description": "Malformed inputs, schema downgrades, caps, timeouts and clean failure codes.",
+  "findings": [
+    "DOCUMENTED DISTINCTION: a child-command timeout is an observed outcome recorded as `inconclusive`; exceeding butwhy's own copy/output caps raises exit 4. Both are correct and are disclosed in README.md."
+  ],
+  "gate": "PASS",
+  "lens": "error handling and resource limits",
+  "round": 4,
+  "slug": "errors"
+}
